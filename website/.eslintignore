@@ -1,0 +1,3 @@
+# Generated Shadcn primitives are kept vendor-clean and linted upstream.
+components/ui/**
+hooks/use-mobile.ts

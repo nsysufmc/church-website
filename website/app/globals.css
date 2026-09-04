@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-coral: var(--coral);
+  --color-mint: var(--mint);
+  --color-sand: var(--sand);
+  --color-ink-muted: var(--ink-muted);
+  --radius-sm: calc(var(--radius) * .65);
+  --radius-md: calc(var(--radius) * .82);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.35);
+  --radius-2xl: calc(var(--radius) * 1.75);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.7);
+}
+
+:root {
+  --background: oklch(.985 .006 92);
+  --foreground: oklch(.2 .034 253);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(.25 .07 251);
+  --primary-foreground: oklch(.99 0 0);
+  --secondary: oklch(.92 .04 168);
+  --secondary-foreground: oklch(.23 .05 251);
+  --muted: oklch(.945 .012 92);
+  --muted-foreground: oklch(.48 .025 250);
+  --accent: oklch(.68 .18 31);
+  --accent-foreground: oklch(1 0 0);
+  --destructive: oklch(.58 .23 27);
+  --border: oklch(.87 .018 88);
+  --input: var(--border);
+  --ring: oklch(.58 .11 250);
+  --navy: #10243d;
+  --coral: #f06c4e;
+  --mint: #b9ead9;
+  --sand: #f2ebdf;
+  --ink-muted: #5d6875;
+  --radius: .8rem;
+}
+
+.dark {
+  --background: oklch(.2 .034 253);
+  --foreground: oklch(.965 .01 90);
+  --card: oklch(.25 .045 252);
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(.88 .07 166);
+  --primary-foreground: oklch(.2 .04 252);
+  --secondary: oklch(.32 .04 252);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(.29 .035 252);
+  --muted-foreground: oklch(.74 .02 252);
+  --accent: oklch(.72 .17 32);
+  --accent-foreground: oklch(.2 .04 252);
+  --destructive: oklch(.69 .19 24);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: oklch(.72 .09 167);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", system-ui, sans-serif;
+  }
+  ::selection { background: var(--mint); color: var(--navy); }
+  a, button { -webkit-tap-highlight-color: transparent; }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12; }
+  .eyebrow { @apply text-xs font-black uppercase tracking-[.22em]; }
+  .section-title { @apply text-balance text-4xl font-black leading-[1.08] tracking-[-.045em] text-navy sm:text-5xl; }
+  .button { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-5 text-sm font-bold transition duration-200 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring/30; }
+  .button svg { @apply size-4; }
+  .button-coral { @apply bg-coral text-white shadow-[0_10px_30px_rgba(240,108,78,.28)] hover:-translate-y-0.5 hover:bg-[#ff7c5b]; }
+  .button-dark { @apply bg-navy text-white hover:-translate-y-0.5 hover:bg-[#1a3454]; }
+  .button-ghost-light { @apply border border-white/25 bg-white/5 text-white hover:bg-white/12; }
+  .detail-line { @apply flex items-center gap-2 text-sm font-bold text-navy; }
+  .detail-line svg { @apply size-4 text-coral; }
+  .feature-card { @apply min-h-64 rounded-[2rem] p-7 shadow-[0_18px_60px_rgba(16,36,61,.08)]; }
+  .feature-card h3 { @apply mt-12 text-2xl font-black leading-tight tracking-[-.035em]; }
+  .feature-card p { @apply mt-4 text-base leading-7 opacity-70; }
+  .number-chip { @apply inline-grid size-10 place-items-center rounded-full bg-mint text-xs font-black text-navy; }
+}
+
+.tide-grid {
+  background-image: linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+.orbit-dot { position: absolute; display: block; border-radius: 999px; }
+.orbit-dot-one { width: 1.1rem; height: 1.1rem; top: 12%; left: 24%; background: var(--coral); box-shadow: 0 0 0 8px rgba(240,108,78,.15); }
+.orbit-dot-two { width: .8rem; height: .8rem; right: 8%; bottom: 30%; background: var(--mint); box-shadow: 0 0 0 7px rgba(185,234,217,.14); }
