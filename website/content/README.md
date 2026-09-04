@@ -15,5 +15,6 @@
 - `articles/`：神學文章
 - `events/`：活動資訊
 - `site.ts`：首頁、教會介紹、固定聚會與聯絡資訊
+- `en.ts`：英文資訊單頁文案
 
 所有日期排序都使用 `YYYY-MM-DD` 格式的 `date` 或 `published` 欄位。`dateLabel` 則是顯示給讀者看的文字，可以自由調整。
