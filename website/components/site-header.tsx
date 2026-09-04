@@ -25,9 +25,9 @@ export function SiteHeader({ language = 'zh' }: { language?: 'zh' | 'en' }) {
           </nav>
         )}
         <div className="flex items-center gap-2 sm:gap-3">
-          <Link href={isEnglish ? '/' : '/en'} className="inline-flex min-h-10 items-center rounded-full border border-navy/15 px-4 text-sm font-black text-navy transition hover:border-coral hover:text-coral">
+          <a href={isEnglish ? '/' : '/en'} className="inline-flex min-h-10 items-center rounded-full border border-navy/15 px-4 text-sm font-black text-navy transition hover:border-coral hover:text-coral">
             {isEnglish ? '中文' : 'EN'}
-          </Link>
+          </a>
           {!isEnglish && (
             <Link href="/gatherings" className="hidden rounded-full bg-navy px-4 py-2.5 text-sm font-bold text-white transition hover:bg-coral sm:inline-flex">
               我想來看看
