@@ -3,17 +3,24 @@ export const homeContent = {
   heroDescription: '一群在高雄生活的人，和你一起吃飯、提問、認識耶穌。無論你熟悉教會，或只是有點好奇，都歡迎來。',
 };
 
+export const siteDetails = {
+  name: '灣 Hope',
+  address: '高雄市鼓山區哨船街87號',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=%E9%AB%98%E9%9B%84%E5%B8%82%E9%BC%93%E5%B1%B1%E5%8D%80%E5%93%A8%E8%88%B9%E8%A1%9787%E8%99%9F',
+};
+
 export const weeklyGathering = {
-  name: '灣Hope 主日聚會',
-  day: '每週日',
-  time: '10:30–12:00',
-  venue: '西子灣聚會空間',
+  category: '週末聚會',
+  name: '崇拜聚會',
+  day: '週六',
+  time: '14:30–16:00',
+  venue: siteDetails.address,
 };
 
 export const aboutContent = {
   story: [
-    '灣Hope 從一個很簡單的盼望開始：在高雄的港邊，有一個地方能讓人放心靠近信仰，也放心帶著還沒整理好的自己。',
-    '我們是一群來自校園與城市不同角落的人。透過主日敬拜、小組、餐桌與日常陪伴，一起學習跟隨耶穌，也學習成為彼此與城市的好鄰舍。',
+    `${siteDetails.name} 從一個很簡單的盼望開始：在高雄的港邊，有一個地方能讓人放心靠近信仰，也放心帶著還沒整理好的自己。`,
+    '我們是一群來自校園與城市不同角落的人。透過崇拜聚會、小組、餐桌與日常陪伴，一起學習跟隨耶穌，也學習成為彼此與城市的好鄰舍。',
   ],
   values: [
     { number: '01', title: '真實，比完美重要', description: '你不需要先整理好自己。疑問、疲累與不確定，都可以帶進關係裡。' },
@@ -24,35 +31,35 @@ export const aboutContent = {
 
 export const gatherings = [
   {
-    name: '主日聚會',
-    audience: '所有人',
-    day: '每週日',
-    time: '10:30–12:00',
-    venue: '西子灣聚會空間',
-    description: '詩歌、信息與一段可以慢慢認識彼此的時間。第一次來也完全沒問題。',
+    category: '週間聚會',
+    name: '中山學園團契',
+    day: '週三',
+    time: '19:00–20:30',
+    venue: siteDetails.address,
   },
   {
-    name: '大學小組',
-    audience: '大專學生',
-    day: '每週三',
-    time: '19:00–21:00',
-    venue: '近中山大學校園',
-    description: '一起吃晚餐、讀一小段聖經，也聊聊這週真實發生的事。',
+    category: '週間聚會',
+    name: '宣讀聖經',
+    day: '週五',
+    time: '12:00–13:00',
+    venue: siteDetails.address,
   },
-  {
-    name: '城市小組',
-    audience: '社會青年',
-    day: '隔週五',
-    time: '19:30–21:30',
-    venue: '鹽埕聚會點',
-    description: '在忙碌生活裡留一個晚上，分享近況、禱告，也重新得力。',
-  },
+  weeklyGathering,
 ];
 
 export const contactContent = {
-  email: 'hello@wanhope.church',
-  instagram: '@wanhope.church',
-  responseTime: '通常會在 1–2 個工作天內回覆',
+  email: 'nsysufmc@gmail.com',
+  emailUrl: 'mailto:nsysufmc@gmail.com',
+  facebook: {
+    label: '灣HOPE',
+    url: 'https://www.facebook.com/NSYSUFMC',
+  },
+  instagram: {
+    label: '灣HOPE',
+    url: 'https://www.instagram.com/nsysufmc/',
+  },
+  address: siteDetails.address,
+  mapUrl: siteDetails.mapUrl,
 };
 
 export const siteNavigation = [
