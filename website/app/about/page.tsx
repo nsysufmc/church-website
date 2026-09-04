@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PageFrame } from '@/components/page-frame';
 import { PageIntro } from '@/components/page-intro';
-import { aboutContent } from '@/content/site';
+import { aboutContent, siteDetails } from '@/content/site';
 
-export const metadata: Metadata = { title: '教會介紹', description: '認識灣Hope的故事、我們重視的事，以及我們所相信的群體生活。' };
+export const metadata: Metadata = { title: '教會介紹', description: `認識 ${siteDetails.name} 的故事、我們重視的事，以及我們所相信的群體生活。` };
 
 export default function AboutPage() {
   return (
     <PageFrame>
-      <PageIntro kicker="About WanHope" title="信仰不是獨自完成的功課。" description="我們想成為一個真實、有空間，也願意一起走的群體。" tone="mint" />
+      <PageIntro kicker={`About ${siteDetails.name}`} title="信仰不是獨自完成的功課。" description="我們想成為一個真實、有空間，也願意一起走的群體。" tone="mint" />
 
       <section className="shell grid gap-12 py-20 sm:py-28 lg:grid-cols-[.7fr_1.3fr]">
         <div>

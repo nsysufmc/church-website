@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { ArrowUpRight, CalendarDays, Clock3, MapPin } from 'lucide-react';
 import { PageFrame } from '@/components/page-frame';
 import { PageIntro } from '@/components/page-intro';
+import { siteDetails } from '@/content/site';
 import { events } from '@/lib/content';
 
-export const metadata: Metadata = { title: '活動', description: '灣Hope近期活動與新朋友聚會。' };
+export const metadata: Metadata = { title: '活動', description: `${siteDetails.name} 近期活動與新朋友聚會。` };
 
 export default function EventsPage() {
   return (

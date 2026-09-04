@@ -2,9 +2,10 @@ import type { Metadata } from 'next';
 import { ContentCard } from '@/components/content-card';
 import { PageFrame } from '@/components/page-frame';
 import { PageIntro } from '@/components/page-intro';
+import { siteDetails } from '@/content/site';
 import { sermons } from '@/lib/content';
 
-export const metadata: Metadata = { title: '講道', description: '灣Hope近期講道與信息筆記。' };
+export const metadata: Metadata = { title: '講道', description: `${siteDetails.name} 近期講道與信息筆記。` };
 
 export default function SermonsPage() {
   return (

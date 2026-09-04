@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ArrowRight, CalendarDays, Clock3, MapPin, Play } from 'lucide-react';
 import { SiteHeader } from '@/components/site-header';
 import { SiteFooter } from '@/components/site-footer';
-import { homeContent, weeklyGathering } from '@/content/site';
+import { homeContent, siteDetails, weeklyGathering } from '@/content/site';
 import { articles, events, sermons } from '@/lib/content';
 
 export default function Home() {
@@ -31,7 +31,7 @@ export default function Home() {
                   第一次來？從這裡開始 <ArrowRight aria-hidden="true" />
                 </Link>
                 <Link className="button button-ghost-light" href="/about">
-                  認識灣Hope
+                  認識{siteDetails.name}
                 </Link>
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Home() {
             </div>
             <p className="detail-line"><CalendarDays />{weeklyGathering.day}</p>
             <p className="detail-line"><Clock3 />{weeklyGathering.time}</p>
-            <p className="detail-line"><MapPin />{weeklyGathering.venue}</p>
+            <a href={siteDetails.mapUrl} target="_blank" rel="noreferrer" className="detail-line hover:text-coral"><MapPin />{weeklyGathering.venue}</a>
           </div>
         </section>
 
@@ -84,7 +84,7 @@ export default function Home() {
               <article className="feature-card border border-border bg-white">
                 <span className="number-chip bg-coral text-white">02</span>
                 <h3>在城市與校園之間，練習成為鄰舍</h3>
-                <p>從主日、餐桌到小組，讓關係比活動更靠近生活。</p>
+                <p>從崇拜、餐桌到小組，讓關係比活動更靠近生活。</p>
               </article>
             </div>
           </div>

@@ -3,13 +3,13 @@
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
-import { siteNavigation } from '@/content/site';
+import { siteDetails, siteNavigation } from '@/content/site';
 
 export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/92 backdrop-blur-xl">
       <div className="shell flex h-[4.5rem] items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-2.5 font-black tracking-[-.04em] text-navy" aria-label="灣Hope 首頁">
+        <Link href="/" className="flex items-center gap-2.5 font-black tracking-[-.04em] text-navy" aria-label={`${siteDetails.name} 首頁`}>
           <span className="grid size-8 place-items-center rounded-full bg-coral text-sm text-white">灣</span>
           <span className="text-xl">Hope</span>
         </Link>
@@ -29,7 +29,7 @@ export function SiteHeader() {
           </SheetTrigger>
           <SheetContent className="w-[88vw] bg-sand sm:max-w-sm" aria-describedby="mobile-nav-description">
             <SheetHeader className="border-b border-navy/10 p-6">
-              <SheetTitle className="text-xl font-black text-navy">灣Hope</SheetTitle>
+              <SheetTitle className="text-xl font-black text-navy">{siteDetails.name}</SheetTitle>
               <SheetDescription id="mobile-nav-description">選擇想認識的內容</SheetDescription>
             </SheetHeader>
             <nav className="flex flex-col p-4" aria-label="行動版導覽">

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import { notFound } from 'next/navigation';
 import { PageFrame } from '@/components/page-frame';
+import { siteDetails } from '@/content/site';
 import { articles, getArticle } from '@/lib/content';
 
 export const dynamicParams = false;
@@ -44,7 +45,7 @@ export default async function ArticleDetailPage({ params }: { params: Promise<{ 
             <div className="mt-16 rounded-[2rem] bg-sand p-7 sm:p-9">
               <p className="eyebrow text-coral">繼續聊聊</p>
               <p className="mt-4 text-xl font-black leading-8 text-navy">如果這篇文章碰到你正在想的問題，歡迎來聚會，或傳訊息和我們說說。</p>
-              <Link href="/contact" className="button button-dark mt-6">聯絡灣Hope</Link>
+              <Link href="/contact" className="button button-dark mt-6">聯絡 {siteDetails.name}</Link>
             </div>
           </div>
         </div>
